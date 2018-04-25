@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+		<script src="cordova.js"></script>
+		<script src="js/pgb.js"></script>
+		<script src="js/scrapper.js"></script>	
+		<script src="js/firebaseService.js"></script>			
+	</head>
+	<body onload="init()">
+		
+		<!-- My app main page -->
+		<div data-role="page" id="logInPage">
+		  <div data-role="main" class="ui-content">
+		    <h1>FashionR</h1>
+			<p>Zaloguj się, aby kontynuować</p>
+		    
+				<input type="email" placeholder="Email" id="emailLog"/>
+				<input type="password" placeholder="Hasło" id="passwordLog"/>
+				<a>Zapomniałeś/aś hasła?</a><br>
+				<a href="#createAccountPage" class="ui-btn">Nie posiadasz konta? Zarejestruj się</a>
+				
+				<button id="login" class="btn btn-action">Zaloguj</button>
+				<button id="googleLogIn">Zaloguj za pomocą Google+</button>
+				<button id="facebookLogIn">Zaloguj za pomocą Facebook</button>
+			  	<!--<button id="tester" onclick="scrapp()">TESTER</button>
+			  	-->
+
+                <!--<a href="#" id="login" class="ui-btn">Zaloguj</a>
+                <a href="#" id="googleLogIn" class="ui-btn">Zaloguj za pomocą Google+</a>
+                <a href="#" id="facebookLogIn" class="ui-btn">Zaloguj za pomocą Facebook</a>-->
+                <a href="#" id="tester" class="ui-btn" onclick="scrapp()">TESTER</a>
+			
+				<a href="#createAccountPage" class="ui-btn" id="zarejestruj">Go to next page</a>
+		  </div>
+		</div>
+		
+		<div data-role="page" id="loggedInPage">
+		  <div data-role="main" class="ui-content">
+		    <h1>FashionR</h1>
+			<p>Zostałeś zalogowany</p>
+			<button id="logout" class="btn btn-action">Wyloguj</button>
+		  </div>
+		</div>
+		
+		 <div data-role="page" id="createAccountPage">
+				<div data-role="main" class="ui-content">
+					<h1>FashionR</h1>
+					<input type="email" placeholder="Email" id="emailReg" required/>
+					<input type="password" placeholder="Hasło" id="passwordReg" required/>
+					<input type="password" placeholder="Powtórz hasło" id="passwordCheck" required/>
+					<p>Wybierz płeć:</p>
+					<div class="custom-select" style="width:200px;">
+							<select>
+								<option value="0">Kobieta</option>
+								<option value="1">Mężczyzna</option>
+							</select>
+					</div>
+					<button id="register">--></button>
+					<a href="#logInPage" class="ui-btn">Go back</a>
+					<a href="#preferences" class="ui-btn">Go to next page</a>
+				</div>
+			</div>
+				
+			<div data-role="page" id="preferences">
+					<div data-role="main" class="ui-content">
+						<h1>Preferencje</h1>
+						<p>Wybierz płeć:</p>
+						<div class="custom-select" style="width:200px;">
+								<select>
+									<option value="0">Kobieta</option>
+									<option value="1">Mężczyzna</option>
+								</select>
+					
+						<p>Wybierz rozmiar ubrań:</p>
+						<div class="custom-select" style="width:200px;">
+							<select>
+								<option value="0">XS</option>
+								<option value="1">XS/S</option>
+								<option value="2">S</option>
+								<option value="3">S/M</option>
+								<option value="4">M</option>
+								<option value="5">M/L</option>
+								<option value="6">L</option>
+								<option value="7">L/XL</option>
+								<option value="8">XL</option>
+								<option value="9">XL/XXL</option>
+								<option value="10">XXL</option>
+							</select>
+
+							<label class="container">Koszule
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+
+							<label class="container">Spodnie
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+
+							<label class="container">Bluzy
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+
+							<label class="container">Bielizna
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+
+							<label class="container">Podkoszulki
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+							<button type="submit">--></button>
+							<a href="#logInPage" class="ui-btn">Go back</a>
+							<a href="#authorsPage" class="ui-btn">Go to next page</a>
+						</div>
+					</div>
+					</div>
+
+					<div data-role="page" id="authorsPage">
+							<div data-role="main" class="ui-content">
+								<h1>Autorzy</h1>
+								<p>Daniel Kucharczyk</p>
+								<p>Wojciech Wisła</p>
+								<p>Anna Żukowska</p>
+								<a href="#logInPage" class="ui-btn">Go back to logIn</a>
+							</div>
+					</div>
+	</body>
+</html>
