@@ -23,6 +23,7 @@
 	   });
 	
 	$(document).ready(function(){
+		alert("Dokument gotowy");
 		const emailInput = document.getElementById('emailLog');
 		const passInput = document.getElementById('passwordLog');
 		const emailRegInput = document.getElementById('emailReg');
