@@ -9,6 +9,18 @@
   		};
 	  firebase.initializeApp(config);
 	}());
+
+	$(document).on('click', '#login', function () {
+		const email = emailInput.value;
+			const passwd = passInput.value;
+			const auth = firebase.auth();
+			const promise = auth.signInWithEmailAndPassword(email, passwd);
+			promise.catch(function(error) {
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				alert("Error: "+errorMessage);
+				});
+	   });
 	
 	$(document).ready(function(){
 		const emailInput = document.getElementById('emailLog');
@@ -16,13 +28,13 @@
 		const emailRegInput = document.getElementById('emailReg');
 		const passwordReg = document.getElementById('passwordReg');
 		const passwordCheck = document.getElementById('passwordCheck');
-		const btnLogIn = document.getElementById('login');
+		//const btnLogIn = document.getElementById('login');
 		const btnGoogleLogIn = document.getElementById('googleLogIn');
 		const btnFBLogIn = document.getElementById('facebookLogIn');
 		const btnRegis = document.getElementById('register');
 		const logout = document.getElementById('logout');
 	  
-		btnLogIn.addEventListener('click', function() {
+		/*btnLogIn.addEventListener('click', function() {
 			const email = emailInput.value;
 			const passwd = passInput.value;
 			const auth = firebase.auth();
@@ -33,7 +45,7 @@
 				alert("Error: "+errorMessage);
 				});
 			
-		});
+		});*/
 	  
 		btnRegis.addEventListener('click', function() {
 
